@@ -30,6 +30,25 @@ Two independent official-container builds produced identical bytes. The exact pu
 The source inventory, container digest and build arguments are in `VERIFIABLE_BUILD.json`. The verification hash excludes trailing zero padding. Reproducibility does not replace a security audit.
 The snapshot includes contract tests; the private release pipeline also uses external-program and backend/frontend fixtures that are not part of this minimal source repository.
 
+## Public IDL
+
+The canonical mainnet IDL is published in the [Program Metadata account](https://explorer.solana.com/address/Gvk2Zpnfayrxwn49m2Q7iFkaHajQBnXFCTauLjzY8oWw) for this program under seed `idl`.
+
+- [Exact release IDL](idl/mainnet-beta/2026-11-16/holdnow.json) (Anchor 0.30+ format).
+- [Publication receipt, hashes and transaction signatures](idl/mainnet-beta/2026-11-16/publication.json).
+- IDL SHA-256: `3256c7b9b6a3b6fe84e00986319af0dfa9ed8e4584003203a109941484166c61`.
+
+The compressed IDL is stored directly on chain. Publication was authorized by the program upgrade authority using instructions exported by the pinned official `@solana-program/program-metadata@0.11.0` CLI. The deployment payer paid the storage deposit and fees; upload chunks were repackaged to accommodate that separate payer. The finalized content was fetched and matched byte-for-byte to the release artifact. The deployed executable was unchanged.
+
+Fetch the canonical IDL without a signing key:
+
+```sh
+npx @solana-program/program-metadata@0.11.0 fetch idl BenqJ8z7KVZ3Y5JvrUAh7Z7koa5c91GsoqbT8kPjV7Xr --rpc https://api.mainnet-beta.solana.com --output holdnow.json
+shasum -a 256 holdnow.json
+```
+
+The metadata remains updateable by its authorized signer while the program is upgradeable. Future interface changes must publish the matching release IDL and retain a versioned repository copy. Explorer and wallet rendering depends on their IDL-format support; publishing an IDL does not itself establish build verification or constitute a security audit.
+
 ## Security reporting
 
 Please use [private vulnerability reporting](https://github.com/holdnow/contracts-release/security/advisories/new). See [SECURITY.md](SECURITY.md) and [security.txt](security.txt).
