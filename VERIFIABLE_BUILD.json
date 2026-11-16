@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "originalSourceCommit": "31ae2419231f5bef5a18ed7336ba199f3b3f8cd3",
-  "programId": "ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9",
+  "originalSourceCommit": "bcc226cb8d9bf01cf14509d1d615a22f9132452b",
+  "programId": "BenqJ8z7KVZ3Y5JvrUAh7Z7koa5c91GsoqbT8kPjV7Xr",
   "solanaVerifyVersion": "0.5.2",
   "solanaVerifyLinuxSha256": "b9d5ccce9634dc14269cab3e7a58649bc141b3306e7735a94478c936341f211f",
   "baseImage": "solanafoundation/solana-verifiable-build@sha256:0b4e3716fad9ca4b4aac3e3f977f43aad93a18c22296c0c0f44fc22e644bdd68",
@@ -20,9 +20,9 @@
     "default"
   ],
   "files": {
-    "Cargo.lock": "1e19abcb3e25f5f6bbca8d49de6ca843b95f16107422d7de251033f405aee3b9",
+    "Cargo.lock": "0b1cdc362cf83c8916f07c3a008017912aa59885abb9e604ab42db296d5056ec",
     "Cargo.toml": "adb6465bddd01e6604d28a24570c05f88888bda1c5d9a24e53af193f5d8f0756",
-    "programs/holdnow/Cargo.toml": "d1465ef91b0eee25232235622e566b7c32f667066b5cbfaca440fbafda1fb3cc",
+    "programs/holdnow/Cargo.toml": "0d5b19296dc324f54a09c72329988e4fa74a493de4744649e3fb948396f2295d",
     "programs/holdnow/Xargo.toml": "815f2dfb6197712a703a8e1f75b03c6991721e9eb7c40dfaec8b0b49da4aa629",
     "programs/holdnow/src/constants.rs": "094efbb41b83c14765e9f701a3c55309e3752eeee538fb2a4e0cb2c2822bd171",
     "programs/holdnow/src/deployment.rs": "80a031c6d5526a63b1f295597a5b43cb65817542124fa033868eb520b914553c",
@@ -42,7 +42,7 @@
     "programs/holdnow/src/instructions/set_params.rs": "9a63d2051e78ad9cf1c68b73065d38bd3518ea6eb9ccf4f60bcc13664b4d3932",
     "programs/holdnow/src/instructions/stage_completed.rs": "e28f1af07da39fc909cd639e5263012f3c338ff7c1ef49ee0a067a5eab0ce80a",
     "programs/holdnow/src/instructions/update_merkle_root.rs": "279ad3310ae434d60bc86863dc54dd19ec3488d32263cfbfc9baa79894ae2096",
-    "programs/holdnow/src/lib.rs": "bc6bde7d589991747b614ef06c207b82dbf8043b9a730934406922ef05aa11c3",
+    "programs/holdnow/src/lib.rs": "0d704de168667fe331d1f6b17846a2292ec228ac112b00352dca43e313ac8f2d",
     "programs/holdnow/src/raydium.rs": "79198c61a543cf7abaaed9328ab57cd4bcfed020f2eb6f6a81508ea59eaec328",
     "programs/holdnow/src/state/mod.rs": "8792d8fca82d178ff257fdab01e6b865d3eda1f92e5034d2b1f586649a97ad86",
     "programs/holdnow/src/state/state.rs": "242b549ff750ea21e44957d4c4c81f8ef753a9afd293c6b7e4f49988a013cd2b",
@@ -72,6 +72,7 @@
     "programs/holdnow/tests/graduation_profile.rs": "eaeebbf0ce0b1ec0b6bef545fbeea289905e48f6dc771737d664b4ab20bfaea7",
     "programs/holdnow/tests/migration_price_unit.rs": "ab2c77f4400435a06312e2f5401e64504048e2a5ae7032be74b021ee1fe38c98",
     "programs/holdnow/tests/real_external.rs": "2094cc35578f9e89901ca802df43c1c196c9aecee56b4aa9010ff51b7c2a943a",
+    "programs/holdnow/tests/security_metadata.rs": "14e2f1b1a1b47abe591b7ec5a3012ad685bad11cd50f0ec2cee2ebb208f4081a",
     "programs/holdnow/tests/unit/buy.rs": "c96c6790b01fa72a8613316589539824e48f4723112fff1945ddb01ddfd8a40d",
     "programs/holdnow/tests/unit/claim.rs": "41d10250421032d9dc95899b9e4f3bc1a8f1c58ce361207dbe5e822e6b4ac460",
     "programs/holdnow/tests/unit/initialize.rs": "20d56a9c936d19481c198be47a9d8932e458c1528effee1506c48d36cd4af468",
@@ -79,12 +80,20 @@
     "programs/holdnow/tests/unit/state.rs": "16087dd4e3474213a38becad67929bf48395164acc27af340d3a8eff0f79c4dd",
     "rust-toolchain.toml": "8dd16d0106c4f02fb4c9541c43fbb30bb53bb91e11bd530061ae517aa423b910"
   },
-  "sourceTreeSha256": "5cbda58455d9c48544af280595613038c6b712b33e73a824dc5ae4c83aa459c7",
-  "expectedBinarySha256": "5e409b7f8a461ad24c0d88752472afb943a0ec6097b02f7f4857cb980b8e843e",
-  "expectedSolanaVerifyHash": "88d8f382099da2811a1c85ffad4d30230e12a7a650162c44841b2d5bb74a00a7",
-  "binaryBytes": 609888,
+  "sourceTreeSha256": "e1168a6daa2556d0d8abbfd36e88836fab734cf2bd13050aee99e43184adb15d",
+  "expectedBinarySha256": "426702b534ab76f4771be0cc8aeb29402601f0584e3b4eae7d46f2b0cb5d4184",
+  "expectedSolanaVerifyHash": "7660f5c4f9d4ccd435ad659b474c55e5a97917cd42984c19990fa69ffcb4d2b0",
+  "binaryBytes": 610256,
   "independentBuildsMatched": 2,
-  "mainnetContractTestsPassed": 163,
+  "mainnetContractTestsPassed": 164,
   "realRaydiumOpenBookTestsPassed": 20,
-  "verificationStatus": "Reproducible source; on-chain and remote verification pending"
+  "embeddedSecurityMetadata": {
+    "name": "Hold.now",
+    "project_url": "https://hold.now",
+    "contacts": "link:https://github.com/holdnow/contracts-release/security/advisories/new",
+    "policy": "https://github.com/holdnow/contracts-release/blob/main/SECURITY.md",
+    "preferred_languages": "en",
+    "source_code": "https://github.com/holdnow/contracts-release"
+  },
+  "verificationStatus": "Reproducible replacement candidate; on-chain and remote verification pending"
 }

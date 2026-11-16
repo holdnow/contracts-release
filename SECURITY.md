@@ -14,7 +14,7 @@ API credentials, or other users' personal data.
 ## Scope
 
 This policy covers the Hold.now contract source published in this repository and
-the mainnet program `ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9`.
+the mainnet program `BenqJ8z7KVZ3Y5JvrUAh7Z7koa5c91GsoqbT8kPjV7Xr`.
 The README identifies the deployed, verified source revision; later repository
 commits do not necessarily represent deployed code. Reports affecting that
 revision or newer published contract source are welcome.
@@ -26,5 +26,6 @@ details. Use a local validator or devnet for reproduction; do not access other
 users' data, move their funds, or disrupt services. This policy does not authorize
 testing against third-party systems or promise a bounty or response deadline.
 
-The repository's `security.txt` points to this reporting policy. It is not embedded
-in the currently deployed program and does not change its verified binary.
+The repository's `security.txt` and the replacement program's embedded security
+metadata both point to this reporting policy. The README records deployment and
+verification status.

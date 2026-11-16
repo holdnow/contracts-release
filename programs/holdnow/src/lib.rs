@@ -14,7 +14,18 @@ pub use events::*;
 use instructions::*;
 pub use state::*;
 
-declare_id!("ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9");
+declare_id!("BenqJ8z7KVZ3Y5JvrUAh7Z7koa5c91GsoqbT8kPjV7Xr");
+
+// Stable links keep contact and policy updates independent of program upgrades.
+#[cfg(not(feature = "no-entrypoint"))]
+solana_security_txt::security_txt! {
+    name: "Hold.now",
+    project_url: "https://hold.now",
+    contacts: "link:https://github.com/holdnow/contracts-release/security/advisories/new",
+    policy: "https://github.com/holdnow/contracts-release/blob/main/SECURITY.md",
+    preferred_languages: "en",
+    source_code: "https://github.com/holdnow/contracts-release"
+}
 
 #[program]
 pub mod holdnow {

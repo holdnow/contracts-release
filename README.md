@@ -1,61 +1,33 @@
 # Hold.now mainnet contract source
 
-This repository contains a clean source snapshot for independently rebuilding the
-Hold.now Solana program. It has no private repository history or deployment keys.
+This repository contains the public source and pinned build recipe for the Hold.now Solana program.
 
-**Deployed to mainnet and independently verified.** The remote verifier confirmed
-that the deployed program matches public source commit
-[`8852c95aac20a5ca94e56c35d1a49e87c14bd8a4`](https://github.com/holdnow/contracts-release/tree/8852c95aac20a5ca94e56c35d1a49e87c14bd8a4).
-The public Hold.now application remains disabled pending launch readiness.
-Reproducibility does not constitute a security audit.
+Replacement program: `BenqJ8z7KVZ3Y5JvrUAh7Z7koa5c91GsoqbT8kPjV7Xr`.
+Deployment and independent remote verification are pending. Public access to Hold.now remains disabled.
+The prior program `ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9` has been permanently closed and must not be used.
 
-## Build
+## Reproduce the build
 
-Install Docker and [Solana Verify 0.5.2](https://github.com/solana-foundation/solana-verifiable-build/releases/tag/v0.5.2).
-The verifier executable checksum, immutable container image, source-file inventory
-and build arguments are recorded in `VERIFIABLE_BUILD.json`.
-
-Run from this repository's root:
+Install Docker and [Solana Verify 0.5.2](https://github.com/solana-foundation/solana-verifiable-build/releases/tag/v0.5.2), then run:
 
 ```sh
 solana-verify build --base-image solanafoundation/solana-verifiable-build@sha256:0b4e3716fad9ca4b4aac3e3f977f43aad93a18c22296c0c0f44fc22e644bdd68 --library-name holdnow --arch v3 '--cargo-build-sbf-args=--tools-version v1.58' -- --features default
 solana-verify get-executable-hash target/deploy/holdnow.so
 ```
 
-Use the `default` feature for mainnet. Do not enable `devnet`.
+Use `default` for mainnet; do not enable `devnet`.
 
-## Expected output
+- Binary size: 610,256 bytes.
+- SHA-256: `426702b534ab76f4771be0cc8aeb29402601f0584e3b4eae7d46f2b0cb5d4184`.
+- Solana Verify hash: `7660f5c4f9d4ccd435ad659b474c55e5a97917cd42984c19990fa69ffcb4d2b0`.
 
-- Program ID: `ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9`
-- ELF size: 609,888 bytes.
-- Full-file SHA-256: `5e409b7f8a461ad24c0d88752472afb943a0ec6097b02f7f4857cb980b8e843e`
-- Solana Verify hash: `88d8f382099da2811a1c85ffad4d30230e12a7a650162c44841b2d5bb74a00a7`
+Two independent official-container builds produced identical bytes. The contract suite passed 164 tests, including 20 integrations using pinned real Raydium/OpenBook programs. The program embeds security.txt reporting metadata. Its instructions, account layouts and launch economics are unchanged from the prior tested release.
 
-The hashes differ because Solana Verify excludes trailing zero padding. Two
-independent container builds reproduced this exact binary. The mainnet contract
-suite passed 163 tests against it, including 20 integration tests using pinned real
-Raydium/OpenBook programs.
+The source inventory, container digest and build arguments are in `VERIFIABLE_BUILD.json`. The verification hash excludes trailing zero padding. Reproducibility does not replace a security audit.
+The snapshot includes contract tests; the private release pipeline also uses external-program and backend/frontend fixtures that are not part of this minimal source repository.
 
-The snapshot retains the program's test sources. The release pipeline also uses
-external-program fixtures and backend/frontend compatibility fixtures; those are
-not included in this minimal build-source repository.
+## Security reporting
 
-## Public verification
+Please use [private vulnerability reporting](https://github.com/holdnow/contracts-release/security/advisories/new). See [SECURITY.md](SECURITY.md) and [security.txt](security.txt).
 
-- [Official remote verification status](https://verify.osec.io/status/ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9)
-- [Mainnet program](https://explorer.solana.com/address/ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9)
-- Verification uploader / upgrade authority: `3jErXTgKy1g2FM6DovmxXLDfUtApYDPhUoiszptGwQVs`
-
-Verification metadata is signed by the program's upgrade authority and pins the
-exact source commit, immutable Docker image, architecture and build arguments above.
-The on-chain and independently rebuilt program hashes match the expected Solana
-Verify hash. Later documentation commits do not change that verified source revision.
-
-To reproduce the verification, check out the pinned commit and use the recorded
-build command. No deployment keys belong in this repository or a public build job.
-
-See [Solana's verified-build instructions](https://solana.com/docs/programs/verified-builds).
-
-## Reporting security issues
-
-See [our security policy](SECURITY.md) for private vulnerability reporting.
+See [Solana's Verified Builds instructions](https://solana.com/docs/programs/verified-builds) for on-chain metadata and independent remote verification.
