@@ -95,5 +95,15 @@
     "preferred_languages": "en",
     "source_code": "https://github.com/holdnow/contracts-release"
   },
-  "verificationStatus": "Reproducible replacement candidate; on-chain and remote verification pending"
+  "verificationStatus": "Deployed, initialized and independently verified on mainnet-beta",
+  "verifiedSourceCommit": "f099a9071d80a5eb08cbb349ef0bfb2c3029b419",
+  "verification": {
+    "statusUrl": "https://verify.osec.io/status/BenqJ8z7KVZ3Y5JvrUAh7Z7koa5c91GsoqbT8kPjV7Xr",
+    "isVerified": true,
+    "lastVerifiedAt": "2026-11-16T13:01:37.967570",
+    "programData": "FtY2bj9ZaSGLFYRiPQMYw1PxAmygVdT1wZd7xBWsYMpt",
+    "deploymentSlot": 470139225,
+    "upgradeAuthority": "3jErXTgKy1g2FM6DovmxXLDfUtApYDPhUoiszptGwQVs",
+    "sourceCommit": "f099a9071d80a5eb08cbb349ef0bfb2c3029b419"
+  }
 }
