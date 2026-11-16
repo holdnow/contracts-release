@@ -55,3 +55,7 @@ To reproduce the verification, check out the pinned commit and use the recorded
 build command. No deployment keys belong in this repository or a public build job.
 
 See [Solana's verified-build instructions](https://solana.com/docs/programs/verified-builds).
+
+## Reporting security issues
+
+See [our security policy](SECURITY.md) for private vulnerability reporting.

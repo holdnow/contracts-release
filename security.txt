@@ -1,0 +1,5 @@
+# Hold.now contract vulnerability reporting
+Contact: https://github.com/holdnow/contracts-release/security/advisories/new
+Expires: 2027-11-15T00:00:00Z
+Preferred-Languages: en
+Policy: https://github.com/holdnow/contracts-release/blob/main/SECURITY.md
