@@ -3,8 +3,11 @@
 This repository contains a clean source snapshot for independently rebuilding the
 Hold.now Solana program. It has no private repository history or deployment keys.
 
-**Mainnet deployment is paused.** This source has not yet received Solana Verified
-Builds status. Reproducibility does not constitute a security audit.
+**Deployed to mainnet and independently verified.** The remote verifier confirmed
+that the deployed program matches public source commit
+[`8852c95aac20a5ca94e56c35d1a49e87c14bd8a4`](https://github.com/holdnow/contracts-release/tree/8852c95aac20a5ca94e56c35d1a49e87c14bd8a4).
+The public Hold.now application remains disabled pending launch readiness.
+Reproducibility does not constitute a security audit.
 
 ## Build
 
@@ -39,10 +42,16 @@ not included in this minimal build-source repository.
 
 ## Public verification
 
-After deployment is authorized, verify against this repository's exact public
-commit with the same image, architecture and build arguments, compare the on-chain
-binary, upload verification metadata using the program's upgrade authority, and
-submit an independent remote verification job. No deployment keys belong in this
-repository or in a public build job.
+- [Official remote verification status](https://verify.osec.io/status/ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9)
+- [Mainnet program](https://explorer.solana.com/address/ETx7pCALkE4hruLUfrUte3VEt2NWyx2fmnxzNwZwApG9)
+- Verification uploader / upgrade authority: `3jErXTgKy1g2FM6DovmxXLDfUtApYDPhUoiszptGwQVs`
+
+Verification metadata is signed by the program's upgrade authority and pins the
+exact source commit, immutable Docker image, architecture and build arguments above.
+The on-chain and independently rebuilt program hashes match the expected Solana
+Verify hash. Later documentation commits do not change that verified source revision.
+
+To reproduce the verification, check out the pinned commit and use the recorded
+build command. No deployment keys belong in this repository or a public build job.
 
 See [Solana's verified-build instructions](https://solana.com/docs/programs/verified-builds).
